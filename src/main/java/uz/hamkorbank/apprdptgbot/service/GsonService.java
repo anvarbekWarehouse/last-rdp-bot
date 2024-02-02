@@ -19,7 +19,9 @@ public class GsonService {
     Gson gson = gsonBuilder.setPrettyPrinting().create();
 
     public List<Users> fileReaderUser(String fileName){
-        String path = systemPath + "/../"+fileName;
+        System.out.println(systemPath);
+        String path = systemPath + "/"+fileName;
+        System.out.println(path);
         File file = new File(path);
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             Users[] data = gson.fromJson(reader, Users[].class);
