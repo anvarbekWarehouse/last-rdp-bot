@@ -20,7 +20,7 @@ public class GsonService {
 
     public List<Users> fileReaderUser(String fileName){
         System.out.println(systemPath);
-        String path = systemPath + fileName;
+         String path = systemPath + "/"+fileName;
         System.out.println(path);
         File file = new File(path);
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -36,7 +36,7 @@ public class GsonService {
     }
 
     public List<Servers> fileReaderServer(String fileName){
-        String path = systemPath + "/../"+fileName;
+         String path = systemPath + "/"+fileName;
         File file = new File(path);
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             Servers[] data = gson.fromJson(reader, Servers[].class);
@@ -51,7 +51,7 @@ public class GsonService {
     }
 
     public void fileWriterUser(String fileName, List<Users> usersList){
-       String path = systemPath + "/../"+fileName;
+       String path = systemPath + "/"+fileName;
         File file = new File(path);
        try ( FileWriter fileWriter = new FileWriter(file)){
            gson.toJson(usersList, fileWriter);
@@ -62,7 +62,7 @@ public class GsonService {
 
     }
     public void fileWriterServer(String fileName, List<Servers> serversList){
-      String path = systemPath + "/../"+fileName;
+       String path = systemPath + "/"+fileName;
         File file = new File(path);
         try ( FileWriter fileWriter = new FileWriter(file)){
             gson.toJson(serversList, fileWriter);
