@@ -20,7 +20,7 @@ public class GsonService {
 
     public List<Users> fileReaderUser(String fileName){
         System.out.println(systemPath);
-        String path = systemPath + "/"+fileName;
+        String path = systemPath + fileName;
         System.out.println(path);
         File file = new File(path);
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
