@@ -12,5 +12,6 @@ FROM openjdk:21-jdk-slim
 EXPOSE 8080
 
 COPY --from=build /target/app-rdp-tg-bot-0.0.1-SNAPSHOT.jar app.jar
-
+COPY users.json .
+COPY servers.json .
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
