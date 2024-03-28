@@ -147,7 +147,7 @@ public class TgImplService {
                             button.setText("✅✅✅" + server.getName());
                             button.setCallbackData(server.getId().toString());
                         } else {
-                            button.setText("⚠⚠⚠ " + server.getName() + " \n"+ firstName);
+                            button.setText("⚠⚠⚠ " + server.getName() + " \n"+ server.getUsername());
                             button.setCallbackData(server.getId().toString());
                             button.setUrl(server.getUsername());
                         }
